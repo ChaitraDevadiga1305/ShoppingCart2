@@ -1,0 +1,37 @@
+<div class="ReactiveForm">
+    <div class="container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <!-- firstname -->
+          <label class="form-label">First Name:</label>
+          <input type="text" class="form-control" formControlName="firstName">
+
+          <!-- lastname -->
+          <label class="form-label">Last Name:</label>
+          <input type="text" class="form-control" formControlName="lastName">
+        
+         <!-- mobile no. -->
+          <label class="form-label" >Mobile No:</label>
+          <input type="text" class="form-control" formControlName="mobileNo">
+        
+        <!-- Address -->
+          <label class="form-label">Address:</label>
+          <input type="text" class="form-control" formControlName="address">
+    
+         <!-- Email -->
+          <label class="form-label">Email:</label>
+          <input type="email" class="form-control" formControlName="email">
+       
+         <!-- Age -->
+          <label class="form-label">Age:</label>
+          <input type="number" class="form-control" formControlName="age">
+        
+         <!-- DOB -->
+          <label class="form-label">Date of Birth:</label>
+          <input type="date" class="form-control" formControlName="dob">
+            
+        </div>
+        <button class="btn btn-outline-secondary" type="submit">Submit</button>
+      </form>
+    </div>
+</div>

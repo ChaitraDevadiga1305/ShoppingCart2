@@ -1,0 +1,30 @@
+.AllProducts{
+    
+    padding-top: 80px;
+    padding-left: 100px;
+    text-align: justify;
+}
+
+.card{
+    display:inline-flex;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    width:70vh;
+    height:80vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-color:rgb(168, 112, 220);
+    border-width: 2px;
+}
+
+img{
+    width: 33vh;
+    height:40vh;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+
+  
