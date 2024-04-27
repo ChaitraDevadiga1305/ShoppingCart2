@@ -3,13 +3,19 @@
     <br>
     <div *ngFor="let product of product" class="card" style="width: 18rem;">
         <img [src]="product.image" class="card-img-top" alt="...">
-          <h5 class="card-title">{{product.name}}</h5>
-          <p class="card-text">{{product.description}}</p>
-          <p class="card-text">{{product.price | currency: 'INR'}} <b style="color: green; padding-left: 100px;"> {{product.instock}}</b></p>
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text">{{product.price | currency: 'INR'}} 
+          <b style="color: green; padding-left: 100px;"> {{product.instock}}
+          </b>
+        </p>
           
-            <button *ngIf="!product.addedToCart; else Added" (click)="OnAddToCart(product)" type="button" class="btn btn-warning">Add to cart</button>
+            <button *ngIf="!product.addedToCart; else Added" (click)="OnAddToCart(product)"
+            type="button" class="btn btn-warning">Add to cart</button>
             <ng-template #Added>
-            <button routerLink="/Cart" style="margin-top: 10px;" type="button" class="btn btn-outline-success">Proceed to cart</button> 
+            <button routerLink="/Cart" style="margin-top: 10px;" type="button" 
+            class="btn btn-outline-success">Proceed to cart</button> 
             </ng-template>
     </div>
 </div>
+

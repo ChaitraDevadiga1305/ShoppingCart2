@@ -2,7 +2,7 @@ import { Pipe,PipeTransform } from "@angular/core";
 import { CartProduct } from "../CartProduct";
 
 @Pipe({
-    name:'totalPrice',
+    name:'totalPrice'
 })
 
 

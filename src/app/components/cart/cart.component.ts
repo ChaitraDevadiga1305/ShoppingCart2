@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../../services/products.service';
+import { CartService } from '../../services/cart.service';
+import { CartProduct } from '../../CartProduct';
 
 @Component({
   selector: 'app-cart',
@@ -9,26 +10,19 @@ import { ProductsService } from '../../services/products.service';
 export class CartComponent implements OnInit {
 
   constructor(
-    private _product:ProductsService){};
+    private _cart : CartService){};
 
-  products!: {
-    id: number; name: string; description: string;
-    price: number; instock: string; image: string; addedToCart:boolean
-  };
-
-  CartProduct:any=[];
+  CartItems:any=[];
 
   ngOnInit():void{
-    this.products = this._product.addCartProducts;
-    this.CartProduct=this.products
-    }
 
-  OnRemovefromCartClick(CartProduct: {id: number; name: string; description: string;
-      price: number; instock: string; image: string; addedToCart:boolean}){
-      this._product.RemoveFromCart(CartProduct);
+    this._cart.CartItems$.subscribe(items => {
+      this.CartItems = items;
+    })
+  }
 
-      this.CartProduct=this._product.GetAllProducts();
-      CartProduct.addedToCart=false;
-    }
+  OnRemoveFromCart(item: any): void {
+    this._cart.removeFromCart(item);
+  }
 
 }

@@ -1,21 +1,19 @@
-<div class="Cart" *ngIf="products!=undefined">
+<div class="Cart">
     <h2>Your Cart</h2>
     <br>
-    <div *ngFor="let p of CartProduct" class="card" style="width: 18rem;">
+    <div *ngFor="let p of CartItems" class="card" style="width: 18rem;">
         <img [src]="p.image" class="card-img-top" alt="...">
           <h5 class="card-title">{{p.name}}</h5>
           <p class="card-text">{{p.description}}</p>
-          <p class="card-text">{{p.price | currency: 'INR'}} <b style="color: green; padding-left: 108px;"> {{p.instock}}</b></p>
+          <p class="card-text">{{p.price | currency: 'INR'}} <b style="color: green; padding-left: 95px;"> {{p.instock}}</b></p>
       
-          <button (click)="OnRemovefromCartClick(p)" type="button" class="btn btn-warning">Remove</button>
+          <button (click)="OnRemoveFromCart(p)" type="button" class="btn btn-warning">Remove</button>
     </div>
 </div>
 <!--Total Price-->
-<div *ngIf="CartProduct" style="margin-left: 15vh;">
-<div *ngFor="let item of CartProduct">
-    <p>{{ item.name }} - {{ item.price | currency: 'INR' }}</p>
+<div style="margin-left: 15vh;">
+    <div *ngFor="let item of CartItems">
+        <p>{{ item.name }} - {{ item.price | currency: 'INR' }}</p>
+    </div>
+        <p>Total Price: {{ CartItems | totalPrice |currency: 'INR' }}</p>
 </div>
-<p>Total Price: {{ CartProduct | totalPrice |currency: 'INR' }}</p>
-</div>
-
-
